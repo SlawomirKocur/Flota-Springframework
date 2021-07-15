@@ -1,3 +1,8 @@
+/*
+ * This class initialize autoscanning for components
+ *
+ */
+
 package flota;
 
 import org.springframework.context.annotation.ComponentScan;

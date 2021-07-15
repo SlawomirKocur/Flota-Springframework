@@ -1,3 +1,9 @@
+/*
+ * This class builds first window od application
+ * this is login window
+ * 
+ */
+
 package flota;
 
 import java.awt.Color;
@@ -74,10 +80,9 @@ public class LoginWindow implements WindowGUI {
 		JButton loginButton = new JButton("Zaloguj");
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// login.checkLogin();
+			
 				login.compare();
-				// login.loginConfirm();
-
+				
 			}
 		});
 		loginButton.setBounds(341, 225, 111, 35);

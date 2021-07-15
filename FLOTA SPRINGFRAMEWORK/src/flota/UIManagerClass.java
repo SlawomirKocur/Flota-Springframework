@@ -1,18 +1,19 @@
+/*
+ * This class sets a look of windows, buttons,and overall look of app
+ */
+
 package flota;
 
 import java.awt.Color;
-import java.awt.Font;
-
 import javax.swing.UIManager;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UIManagerClass{
 
 	
-	@Autowired
+	
 	public UIManagerClass() {
 		
 		
@@ -27,6 +28,12 @@ public class UIManagerClass{
 		
 		//look of ToolTip
 		UIManager.put("ToolTip.background", Color.WHITE);
+		
+		UIManager.put("OptionPane.background", Color.GRAY);
+		UIManager.put("OptionPane.foreground", Color.GRAY);
+		UIManager.put("OptionPane.messageForeground", Color.BLACK);
+		UIManager.put("Panel.background", Color.GRAY);
+		UIManager.put("window", Color.GRAY);
 		
 		
 	}
