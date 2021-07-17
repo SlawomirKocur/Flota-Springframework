@@ -35,6 +35,16 @@ public class UIManagerClass{
 		UIManager.put("Panel.background", Color.GRAY);
 		UIManager.put("window", Color.GRAY);
 		
+		UIManager.put("ScrollPane.background", Color.GRAY);
+		UIManager.put("ScrollPane.foreground", Color.BLACK);
+		
+		UIManager.put("table.background", Color.GRAY);
+		UIManager.put("table.foreground", Color.BLACK);
+		UIManager.put("table.focusCellBackground", Color.GRAY);
+		UIManager.put("table.focusCellForeground", Color.BLACK);
+		UIManager.put("table.focusCellHighlightBorder", Color.WHITE);
+		
+		
 		
 	}
 	

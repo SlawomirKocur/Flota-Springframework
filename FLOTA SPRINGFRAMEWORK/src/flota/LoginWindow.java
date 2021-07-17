@@ -22,20 +22,24 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 @Component("loginwindow")
 public class LoginWindow implements WindowGUI {
 
-	private JFrame frame;
+	public JFrame frame;
 	public JTextField userField;
 	public JPasswordField userPassword;
 	private JLabel passwordLabel;
 	private JLabel infoLoginLabel;
 
 	@Autowired
-	LoginAction login;
-
+	private LoginAction login;
+	@Autowired
+	private JDBCTemp temp;
+	
+	
 	@Override
 	public void windowBuild() {
 		frame = new JFrame();
@@ -81,7 +85,16 @@ public class LoginWindow implements WindowGUI {
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			
-				login.compare();
+				try {
+					login.compare();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			
+				
+				//temp.insert();
 				
 			}
 		});

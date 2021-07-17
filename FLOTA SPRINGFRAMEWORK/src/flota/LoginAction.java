@@ -4,6 +4,8 @@
 
 package flota;
 
+import java.sql.SQLException;
+
 import javax.swing.JOptionPane;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +18,13 @@ public class LoginAction {
 	private String correctloginName = "admin";
 	private String correctPassword = "admin";
 	
+	@Autowired
+	private MainGUIWindow mainWindow;
 
 	@Autowired
 	private LoginWindow logWin;
 
-	public void compare() {
+	public void compare() throws SQLException {
 		/*
 		 * transforms Array into String
 		 * getPassword() returns an Array do to compare with String it
@@ -33,10 +37,12 @@ public class LoginAction {
 
 		
 		//checks if statement is true
-		if ((logWin.userField.getText().compareTo(correctloginName) == 0) & (pass.compareTo(correctPassword) == 0))
+		if ((logWin.userField.getText().compareTo(correctloginName) == 0) & (pass.compareTo(correctPassword) == 0)) {
 
 			JOptionPane.showMessageDialog(null, "has這 prawid這we");
-
+			mainWindow.initialize();
+			logWin.frame.dispose();
+		}
 		else {
 			JOptionPane.showMessageDialog(null, "has這 nieprawid這we");
 		}

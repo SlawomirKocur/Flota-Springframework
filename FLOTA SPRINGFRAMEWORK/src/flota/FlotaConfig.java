@@ -5,14 +5,20 @@
 
 package flota;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
+@EnableAspectJAutoProxy
 @Configuration
 @ComponentScan(basePackages = "flota")
 public class FlotaConfig {
 
-	
+	@Bean
+	public AspectChoice aspectsel() {
+		return new AspectChoice();
+	}
 	
 	
 }

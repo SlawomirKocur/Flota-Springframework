@@ -69,5 +69,13 @@
 	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/spring-framework-5.0.5.RELEASE/libs/spring-websocket-5.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/spring-framework-5.0.5.RELEASE/libs/spring-websocket-5.0.5.RELEASE-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/spring-framework-5.0.5.RELEASE/libs/spring-websocket-5.0.5.RELEASE-sources.jar"/>
+	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/mysql-connector-java-8.0.25.jar"/>
+	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/DateChooser.jar"/>
+	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/jdatepicker-1.3.4.jar"/>
+	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/jdatepicker-2.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/rs2xml.jar"/>
+	<classpathentry kind="lib" path="C:/Users/slawe/.p2/pool/plugins/org.aspectj.runtime_1.9.6.202012111622.jar" sourcepath="C:/Users/slawe/.p2/pool/plugins/org.aspectj.runtime.source_1.9.6.202012111622.jar"/>
+	<classpathentry kind="lib" path="C:/JAVA/Moje bazy danych/sqlite-jdbc-3.34.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
