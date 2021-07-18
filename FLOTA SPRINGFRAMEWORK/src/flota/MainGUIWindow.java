@@ -48,6 +48,12 @@ public class MainGUIWindow {
 	PortDischargeListPopulate portDisList;
 	@Autowired
 	TablePopulate shipInTable;
+	@Autowired
+	NewPort newPort;
+	@Autowired
+	NewShip newShip;
+	@Autowired
+	NewCargo newcargo;
 	
 	JTextField textIlosc;
 
@@ -59,11 +65,11 @@ public class MainGUIWindow {
 	public JTextField textFieldnazwaNowegoPortuSzerokosc;
 	public JTextField textFieldnazwaNowegoPortuDlugosc;
 	public JButton btnDodajNowyPort, btnDodajNowyStatek;
-	private JTextField textNazwaLadunku;
-	private JTextField textCenaLadunku;
-	private JTextField textObjetoscLadunku;
+	public JTextField textNazwaLadunku;
+	public JTextField textCenaLadunku;
+	public JTextField textObjetoscLadunku;
 
-	private JTextField textUwagi;
+	public JTextField textUwagi;
 	public JTextField textNazwaNowegoStatku;
 	public JTextField textLadownoscStatku;
 	public JTextField textObjetoscStatku;
@@ -74,6 +80,9 @@ public class MainGUIWindow {
 
 	public JComboBox comboBoxPortWyladunkowy, comboBoxPort, comboBoxLadunek;
 
+	public Choice grainStandard;
+	
+	
 	//private ArrayList<String> listaLadunek = new ArrayList<String>();
 	//private ArrayList<String> listaPort = new ArrayList<String>();
 
@@ -227,41 +236,11 @@ public class MainGUIWindow {
 		btnDodajNowyPort.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				// Naleza³oby to przeniesc jako osobna klasa lub metoda
-				// ODDZIELONA od czesci budujacej GUI
-
-				Connection conn2 = null;
-
 				try {
-					Class.forName("org.sqlite.JDBC");
-				} catch (ClassNotFoundException e1) {
+					newPort.setNewPort();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
 					e1.printStackTrace();
-				}
-
-				try {
-
-					// Dodaje nowy port do bazy danych
-					String polecenieSql = "INSERT INTO PORT(NAZWA_PORTU, KRAJ, KRAJ_PELNA_NAZWA, SZEROKOSC_GEOGRAFICZNA, D£UGOSC_GEOGRAFICZNA) VALUES(?,?,?,?,?)";
-					// conn2 = DriverManager.getConnection("jdbc:sqlite:C:\\JAVA\\Moje bazy
-					// danych\\Flota.db");
-					conn2 = DriverManager.getConnection("jdbc:sqlite:Flota.db");
-
-					PreparedStatement stmt = conn2.prepareStatement(polecenieSql);
-					stmt.setString(1, textFieldnazwaNowegoPortuNazwa.getText());
-					stmt.setString(2, textFieldnazwaNowegoPortuKraj.getText());
-					stmt.setString(3, textFieldnazwaNowegoPortuPNazwa.getText());
-					stmt.setString(4, textFieldnazwaNowegoPortuSzerokosc.getText());
-					stmt.setString(5, textFieldnazwaNowegoPortuDlugosc.getText());
-
-					stmt.executeUpdate();
-					stmt.close();
-					conn2.close();
-
-					JOptionPane.showMessageDialog(null, "Dodano nowy port do bazy danych");
-
-				} catch (Exception ex) {
-					JOptionPane.showMessageDialog(null, "B³¹d, nie dodano portu do bazy");
-
 				}
 
 			}
@@ -331,7 +310,7 @@ public class MainGUIWindow {
 		textObjetoscLadunku.setBounds(228, 90, 86, 20);
 		panelNowyLadunek.add(textObjetoscLadunku);
 
-		Choice grainStandard = new Choice();
+		grainStandard = new Choice();
 		grainStandard.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		grainStandard.setBounds(228, 120, 86, 20);
 		panelNowyLadunek.add(grainStandard);
@@ -349,54 +328,12 @@ public class MainGUIWindow {
 		btnDodajNowyLadunek.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				/*
-				 * czesc kodu obslugujaca dodawanie nowego ladunku do bazy danych
-				 * 
-				 * 
-				 * 
-				 */
-
-				// dostosowuje dane wpisane przez uzytkowenika na odpowiedni format
-				// odpowiedni dla bazy danych
-				String CenaLadunku = textCenaLadunku.getText();
-				Double CenaLadunkuDouble = Double.parseDouble(CenaLadunku);
-
-				String ObjetoscLadunku = textObjetoscLadunku.getText();
-				Double ObjetoscLadunkuDouble = Double.parseDouble(ObjetoscLadunku);
-
-				String grainStandardtext = grainStandard.getSelectedItem();
-				String Uwagi = textUwagi.getText();
-
-				Connection conn3 = null;
-
 				try {
-
-					// nawiazanie polaczenia z bazadanych
-					// conn3 = DriverManager.getConnection("jdbc:sqlite:C:\\JAVA\\Moje bazy
-					// danych\\Flota.db");
-					conn3 = DriverManager.getConnection("jdbc:sqlite:Flota.db");
-
-					// polecenie dla bazy danych
-					String polecenieSql = "INSERT INTO LADUNEK(NAZWA_LADUNKU,   CENA_ZA_TONE_USD, OBJETOSC_TONY, GRAIN_STANDARD, UWAGI_DOT_LADUNKU) VALUES(?,?,?,?,?)";
-					PreparedStatement stmt = conn3.prepareStatement(polecenieSql);
-
-					stmt.setString(1, textNazwaLadunku.getText());
-					stmt.setDouble(2, CenaLadunkuDouble);
-					stmt.setDouble(3, ObjetoscLadunkuDouble);
-					stmt.setString(4, grainStandardtext);
-					stmt.setString(5, Uwagi);
-
-					stmt.executeUpdate();
-					stmt.close();
-					conn3.close();
-
-					JOptionPane.showMessageDialog(null, "Dodano nowy typ ³adunku do bazy danych");
-
-				} catch (Exception ex) {
-					JOptionPane.showMessageDialog(null, "B³¹d, nie dodano nowego typu ³adunku do bazy");
-
+					newcargo.setNewCargo();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
-
 			}
 		});
 
@@ -478,57 +415,16 @@ public class MainGUIWindow {
 		dateChooser.setBounds(228, 119, 86, 20);
 		panelNowyStatek.add(dateChooser);
 
-		// String dataDostepnosci = (new
-		// java.text.SimpleDateFormat("MM/dd/yyyy")).format(dateChooser.getDate());
+		
 
 		btnDodajNowyStatek = new JButton("Dodaj");
 		btnDodajNowyStatek.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				/*
-				 * ¯utowanie wartosc Date wybranej w JDateChooser na format String oraz
-				 * pozostalych wartosci wybranych w panelu "nowy statek ze String na Double aby
-				 * w nbazie danych wpisane wartosci reprezentowaly wartosci liczbowe"
-				 * 
-				 */
-
-				String ladownoscString = textLadownoscStatku.getText();
-				Double ladownoscDouble = Double.parseDouble(ladownoscString);
-
-				String objetoscString = textObjetoscStatku.getText();
-				Double objetoscDouble = Double.parseDouble(objetoscString);
-
-				String dataDostepnosci = (new java.text.SimpleDateFormat("dd/MM/yyyy")).format(dateChooser.getDate());
-
-				String koszt = textKoszt.getText();
-				Double kosztDouble = Double.parseDouble(koszt);
-
-				Connection conn4 = null;
-
 				try {
-
-					// conn4 = DriverManager.getConnection("jdbc:sqlite:C:\\JAVA\\Moje bazy
-					// danych\\Flota.db");
-					conn4 = DriverManager.getConnection("jdbc:sqlite:Flota.db");
-
-					String polecenieSql = "INSERT INTO STATEK(NAZWA_STATKU,   LADOWNOSC_STATKU_DWT, LADOWNOSC_STATKU_OBJETOSC_M3, SZCOWANA_DATA_DOSTEPNOSCI, DOBOWY_KOSZY_PALIWA_USD) VALUES(?,?,?,?,?)";
-					PreparedStatement stmt = conn4.prepareStatement(polecenieSql);
-
-					stmt.setString(1, textNazwaNowegoStatku.getText());
-					stmt.setDouble(2, ladownoscDouble);
-					stmt.setDouble(3, objetoscDouble);
-					stmt.setString(4, dataDostepnosci);
-					stmt.setDouble(5, kosztDouble);
-
-					stmt.executeUpdate();
-					stmt.close();
-					conn4.close();
-
-					JOptionPane.showMessageDialog(null, "Dodano nowy statek do bazy danych");
-
-				} catch (Exception ex) {
-					JOptionPane.showMessageDialog(null, "B³¹d, nie dodano statku do bazy");
-
+					newShip.setNewShip();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
 				}
 
 			}
