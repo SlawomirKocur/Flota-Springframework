@@ -54,7 +54,7 @@ public class MainGUIWindow {
 	NewShip newShip;
 	@Autowired
 	NewCargo newcargo;
-	
+
 	JTextField textIlosc;
 
 	public Double deklarujIloscLadunku = 0.0;
@@ -81,10 +81,6 @@ public class MainGUIWindow {
 	public JComboBox comboBoxPortWyladunkowy, comboBoxPort, comboBoxLadunek;
 
 	public Choice grainStandard;
-	
-	
-	//private ArrayList<String> listaLadunek = new ArrayList<String>();
-	//private ArrayList<String> listaPort = new ArrayList<String>();
 
 	public String[] tabelaListaLadunek, tabelaListaPort;
 
@@ -108,10 +104,8 @@ public class MainGUIWindow {
 
 	public JTable table;
 
-	
-	
 	/**
-	 * @throws SQLException 
+	 * @throws SQLException
 	 * @wbp.parser.entryPoint
 	 */
 	public void initialize() throws SQLException {
@@ -121,40 +115,7 @@ public class MainGUIWindow {
 		frame.setBounds(100, 100, 1600, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		
-		
-		
-		Connection conn = null;
-		/*
-		try {
-			Class.forName("org.sqlite.JDBC");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-
-		try {
-
-		
-			conn = DriverManager.getConnection("jdbc:sqlite:Flota.db");
-
-		
-			Statement stmtPort = conn.createStatement();
-			ResultSet rsPort = stmtPort.executeQuery("SELECT NAZWA_PORTU FROM PORT");
-
-			while (rsPort.next()) {
-				String sPort = rsPort.getString(1);
-
-				listaPort.add(sPort);
-				tabelaListaPort = listaPort.toArray(new String[listaPort.size()]);
-
-			}
-			conn.close();
-
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Problem with connection of database");
-
-		}
-*/
+	
 		JLabel dbLog = new JLabel("Po\u0142\u0105czono z baz\u0105 danych:");
 		dbLog.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		dbLog.setBounds(50, 11, 312, 23);
@@ -414,8 +375,6 @@ public class MainGUIWindow {
 		dateChooser = new JDateChooser();
 		dateChooser.setBounds(228, 119, 86, 20);
 		panelNowyStatek.add(dateChooser);
-
-		
 
 		btnDodajNowyStatek = new JButton("Dodaj");
 		btnDodajNowyStatek.addActionListener(new ActionListener() {
@@ -677,7 +636,7 @@ public class MainGUIWindow {
 		panelZamownienie.add(btnPodsumowanie);
 
 		comboBoxLadunek = new JComboBox(cargoList.sqlStatementCargoList());
-		
+
 		comboBoxLadunek.setBounds(182, 31, 119, 29);
 		panelZamownienie.add(comboBoxLadunek);
 
@@ -693,22 +652,20 @@ public class MainGUIWindow {
 
 		btnAnalizuj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-/*
-				wybranyLadunekWBTN = (String) comboBoxLadunek.getSelectedItem();
-				wybranyPort = (String) comboBoxPort.getSelectedItem();
-				wybranyPortWyladunkowy = (String) comboBoxPortWyladunkowy.getSelectedItem();
-				String iloscString = textIlosc.getText();
-				iloscDouble = Double.parseDouble(iloscString);
-				ilosc = Double.parseDouble(textIlosc.getText());
-				dataZaladunku = dateChooserZaladunek.getDate();
-				dataWyladunku = dateChooserWyladunek.getDate();
-
-				SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-
-				String dataDostepnosci = format.format(new Date());
-
 				/*
-				 * SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+				 * wybranyLadunekWBTN = (String) comboBoxLadunek.getSelectedItem(); wybranyPort
+				 * = (String) comboBoxPort.getSelectedItem(); wybranyPortWyladunkowy = (String)
+				 * comboBoxPortWyladunkowy.getSelectedItem(); String iloscString =
+				 * textIlosc.getText(); iloscDouble = Double.parseDouble(iloscString); ilosc =
+				 * Double.parseDouble(textIlosc.getText()); dataZaladunku =
+				 * dateChooserZaladunek.getDate(); dataWyladunku =
+				 * dateChooserWyladunek.getDate();
+				 * 
+				 * SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+				 * 
+				 * String dataDostepnosci = format.format(new Date());
+				 * 
+				 * /* SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 				 * 
 				 * dateFormat.format(new Date())
 				 * 
@@ -791,8 +748,7 @@ public class MainGUIWindow {
 
 			}
 		});
-		
-		
+
 		btnAnalizuj.setBounds(334, 341, 132, 53);
 		panelZamownienie.add(btnAnalizuj);
 
@@ -818,53 +774,53 @@ public class MainGUIWindow {
 
 		table = new JTable();
 		scrollPane.setViewportView(table);
-		
+
 		JButton btnShipsInTable = new JButton("Statki");
 		btnShipsInTable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				try {
-					shipInTable.getShipLost();;
+					shipInTable.getShipLost();
+					;
 				} catch (SQLException e1) {
-					
+
 					e1.printStackTrace();
 				}
-				
+
 			}
 		});
 		btnShipsInTable.setBounds(562, 48, 89, 23);
 		panelWynikiBazy.add(btnShipsInTable);
-		
+
 		JButton btnPortsInTable = new JButton("Porty");
 		btnPortsInTable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+
 				try {
 					shipInTable.getPortList();
 				} catch (SQLException e1) {
-				
+
 					e1.printStackTrace();
 				}
 			}
 		});
 		btnPortsInTable.setBounds(562, 82, 89, 23);
 		panelWynikiBazy.add(btnPortsInTable);
-		
+
 		JButton btnCargoInTable = new JButton("\u0141adunki");
 		btnCargoInTable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					shipInTable.getCargoList();
 				} catch (SQLException e1) {
-				
+
 					e1.printStackTrace();
 				}
-				
+
 			}
 		});
 		btnCargoInTable.setBounds(562, 116, 89, 23);
 		panelWynikiBazy.add(btnCargoInTable);
-		
-		
+
 	}
 }
