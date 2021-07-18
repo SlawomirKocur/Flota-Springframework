@@ -23,8 +23,9 @@ public class NewCargo {
 	 */
 
 	public void setNewCargo() throws SQLException {
-		//sqlConnection.getconnection();
+		
 		String polecenieSql = ("INSERT INTO LADUNEK(NAZWA_LADUNKU,   CENA_ZA_TONE_USD, OBJETOSC_TONY, GRAIN_STANDARD, UWAGI_DOT_LADUNKU) VALUES(?,?,?,?,?)");
+		
 		try {
 
 			// polecenie dla bazy danych

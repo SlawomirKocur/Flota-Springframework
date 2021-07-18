@@ -20,7 +20,7 @@ public class NewPort {
 
 	public void setNewPort() throws SQLException {
 
-		sqlConnection.getconnection();
+	
 		String polecenieSql = ("INSERT INTO PORT(NAZWA_PORTU, KRAJ, KRAJ_PELNA_NAZWA, SZEROKOSC_GEOGRAFICZNA, DLUGOSC_GEOGRAFICZNA) VALUES(?,?,?,?,?)");
 
 		try {

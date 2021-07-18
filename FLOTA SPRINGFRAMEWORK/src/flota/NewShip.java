@@ -25,7 +25,7 @@ public class NewShip {
 
 	public void setNewShip() throws SQLException {
 
-		sqlConnection.getconnection();
+		
 		String polecenieSql = ("INSERT INTO STATEK(NAZWA_STATKU,   LADOWNOSC_STATKU_DWT, LADOWNOSC_STATKU_OBJETOSC_M3, SZCOWANA_DATA_DOSTEPNOSCI, DOBOWY_KOSZY_PALIWA_USD) VALUES(?,?,?,?,?)");
 		try {
 
