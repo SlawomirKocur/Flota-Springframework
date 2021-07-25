@@ -8,9 +8,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MySQLConnection {
-
-	//public Connection conn = null;
-
+/*
+	//connection to MySQL database
 	public Connection getconnection() throws SQLException {
 
 		try {
@@ -18,7 +17,7 @@ public class MySQLConnection {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-
+		//String url = "jdbc:mysql:Flota.sql";
 		String url = "jdbc:mysql://127.0.0.1:3306/flotamysql";
 		String username = "root";
 		String password = "aleksandra1958";
@@ -27,9 +26,24 @@ public class MySQLConnection {
 		return DriverManager.getConnection(url, username, password);
 
 	}
-	/*public void closeConnection() throws SQLException {
-		conn.close();
+	*/
+	
+	
+	//connection to SQlite database
+	public Connection getconnection() throws SQLException{
+		
+		try {
+			Class.forName("org.sqlite.JDBC");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	
+		String url = "jdbc:sqlite:Flota.db";
+	
+		
+		return DriverManager.getConnection(url);
+
+	
 		
 	}
-*/
 }
