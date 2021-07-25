@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MySQLConnection {
-/*
+	/*
 	//connection to MySQL database
 	public Connection getconnection() throws SQLException {
 
@@ -28,7 +28,7 @@ public class MySQLConnection {
 	}
 	*/
 	
-	
+	//
 	//connection to SQlite database
 	public Connection getconnection() throws SQLException{
 		
@@ -44,6 +44,7 @@ public class MySQLConnection {
 		return DriverManager.getConnection(url);
 
 	
-		
+	
 	}
+
 }

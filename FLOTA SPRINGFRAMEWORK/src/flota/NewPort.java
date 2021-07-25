@@ -34,7 +34,7 @@ public class NewPort {
 
 			stmt.executeUpdate();
 			stmt.close();
-			// sqlConnection.getconnection().close();
+			sqlConnection.getconnection().close();
 			JOptionPane.showMessageDialog(null, "Dodano nowy port do bazy danych");
 
 		} catch (Exception ex) {

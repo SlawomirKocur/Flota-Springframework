@@ -29,7 +29,7 @@ public class PortDischargeListPopulate {
 		// ktora nastepnie tworzy poszczegolne wiersze w JComboBox
 		listPort.add(sLadunek);
 		arrayListPortDischarge = listPort.toArray(new String[listPort.size()]);
-		
+		sqlConnection.getconnection().close();
 		}
 		return arrayListPortDischarge;
 		

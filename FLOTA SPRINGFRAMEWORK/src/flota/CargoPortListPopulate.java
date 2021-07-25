@@ -38,12 +38,14 @@ public class CargoPortListPopulate {
 		while (rsCargo.next()) {
 		String sCargo = rsCargo.getString(1);
 		
+		
 		// wyniki zapytania sa dodawane do Arraylisty
 		// nastepnie array lista jest przerabiana na tablice
 		// ktora nastepnie tworzy poszczegolne wiersze w JComboBox
 		listCargo.add(sCargo);
 		arrayListCargo = listCargo.toArray(new String[listCargo.size()]);
-		
+		sqlConnection.getconnection().close();
+
 	
 		}
 		return arrayListCargo;
@@ -61,7 +63,8 @@ public class CargoPortListPopulate {
 		// ktora nastepnie tworzy poszczegolne wiersze w JComboBox
 		listPort.add(sPort);
 		arrayListPort = listPort.toArray(new String[listPort.size()]);
-	
+		sqlConnection.getconnection().close();
+		
 		}
 		return arrayListPort;
 		
@@ -78,6 +81,7 @@ public class CargoPortListPopulate {
 		// ktora nastepnie tworzy poszczegolne wiersze w JComboBox
 		listPortDis.add(sPortDis);
 		arrayListPortDis = listPortDis.toArray(new String[listPortDis.size()]);
+		sqlConnection.getconnection().close();
 		
 		
 		}

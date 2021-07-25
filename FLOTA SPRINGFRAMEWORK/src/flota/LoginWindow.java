@@ -36,8 +36,7 @@ public class LoginWindow implements WindowGUI {
 
 	@Autowired
 	private LoginAction login;
-	@Autowired
-	private JDBCTemp temp;
+	
 	
 	
 	@Override
