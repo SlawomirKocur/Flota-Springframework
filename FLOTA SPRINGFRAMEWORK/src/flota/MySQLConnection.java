@@ -13,12 +13,12 @@ public class MySQLConnection {
 	public Connection getconnection() throws SQLException {
 
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName("com.mysql.jdbc.cj.Driver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		//String url = "jdbc:mysql:Flota.sql";
-		String url = "jdbc:mysql://127.0.0.1:3306/flotamysql";
+		
+		String url = "jdbc:mysql:FlotaMySQL.sql";
 		String username = "root";
 		String password = "aleksandra1958";
 
