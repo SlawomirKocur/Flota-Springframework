@@ -22,7 +22,7 @@ public class DBDataSource {
 		
 		String url = "jdbc:mysql:FlotaMySQL.sql";
 		String username = "root";
-		String password = "aleksandra1958";
+		String password = "";
 
 		
 		return DriverManager.getConnection(url, username, password);
