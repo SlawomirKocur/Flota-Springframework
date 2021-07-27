@@ -21,7 +21,7 @@ public class NewShip {
 	@Autowired
 	MainGUIWindow window;
 	@Autowired
-	MySQLConnection sqlConnection;
+	DBDataSource sqlConnection;
 
 	public void setNewShip() throws SQLException {
 
@@ -44,7 +44,7 @@ public class NewShip {
 			JOptionPane.showMessageDialog(null, "Dodano nowy statek do bazy danych");
 
 		} catch (Exception ex) {
-			JOptionPane.showMessageDialog(null, "B³¹d, nie dodano statku do bazy");
+			JOptionPane.showMessageDialog(null, "B³¹d, nie dodano statku do bazy\nWprowadz wszystkie dane");
 
 		}
 	}

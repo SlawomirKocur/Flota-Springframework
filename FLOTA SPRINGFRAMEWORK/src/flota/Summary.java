@@ -17,7 +17,7 @@ public class Summary {
 	@Autowired
 	MainGUIWindow window;
 	@Autowired
-	MySQLConnection sqlConnection;
+	DBDataSource sqlConnection;
 	
 	private String wybranyLadunekWBTN;
 	private String wybranyPort;

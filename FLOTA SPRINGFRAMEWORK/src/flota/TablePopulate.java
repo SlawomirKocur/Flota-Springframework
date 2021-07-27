@@ -13,7 +13,7 @@ import net.proteanit.sql.DbUtils;
 public class TablePopulate {
 
 	@Autowired
-	private MySQLConnection sqlConnection;
+	private DBDataSource sqlConnection;
 	@Autowired
 	MainGUIWindow window;
 

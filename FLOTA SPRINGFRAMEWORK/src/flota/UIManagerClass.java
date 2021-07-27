@@ -44,8 +44,8 @@ public class UIManagerClass{
 		UIManager.put("table.focusCellForeground", Color.BLACK);
 		UIManager.put("table.focusCellHighlightBorder", Color.WHITE);
 		
-		
-		
+		UIManager.put("ComboBox.buttonBackground", Color.GRAY);
+		UIManager.put("ComboBox.background", Color.WHITE);
 	}
 	
 }

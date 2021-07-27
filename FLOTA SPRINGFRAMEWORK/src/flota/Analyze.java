@@ -21,7 +21,7 @@ public class Analyze {
 	@Autowired
 	MainGUIWindow window;
 	@Autowired
-	MySQLConnection sqlConnection;
+	DBDataSource sqlConnection;
 	@Autowired
 	Summary summary;
 	

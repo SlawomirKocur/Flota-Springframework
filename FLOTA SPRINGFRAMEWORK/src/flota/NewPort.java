@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class NewPort {
 
 	@Autowired
-	private MySQLConnection sqlConnection;
+	private DBDataSource sqlConnection;
 	@Autowired
 	MainGUIWindow window;
 
@@ -35,10 +35,11 @@ public class NewPort {
 			stmt.executeUpdate();
 			stmt.close();
 			sqlConnection.getconnection().close();
+			
 			JOptionPane.showMessageDialog(null, "Dodano nowy port do bazy danych");
 
 		} catch (Exception ex) {
-			JOptionPane.showMessageDialog(null, "B³¹d, nie dodano portu do bazy");
+			JOptionPane.showMessageDialog(null, "B³¹d, nie dodano portu do bazy\nWprowadz wszystkie dane");
 
 		}
 

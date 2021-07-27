@@ -14,7 +14,7 @@ public class NewCargo {
 	@Autowired
 	MainGUIWindow window;
 	@Autowired
-	MySQLConnection sqlConnection;
+	DBDataSource sqlConnection;
 	/*
 	 * czesc kodu obslugujaca dodawanie nowego ladunku do bazy danych
 	 * 
@@ -45,7 +45,7 @@ public class NewCargo {
 			JOptionPane.showMessageDialog(null, "Dodano nowy typ ³adunku do bazy danych");
 
 		} catch (Exception ex) {
-			JOptionPane.showMessageDialog(null, "B³¹d, nie dodano nowego typu ³adunku do bazy");
+			JOptionPane.showMessageDialog(null, "B³¹d, nie dodano nowego typu ³adunku do bazy\nWprowadz wszystkie dane");
 
 		}
 

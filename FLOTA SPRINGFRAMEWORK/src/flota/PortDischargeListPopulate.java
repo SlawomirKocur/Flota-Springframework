@@ -12,13 +12,15 @@ import org.springframework.stereotype.Component;
 public class PortDischargeListPopulate {
 
 	@Autowired
-	private  MySQLConnection sqlConnection;
+	private  DBDataSource sqlConnection;
 
 	static ArrayList<String> listPort = new ArrayList();
 	static String arrayListPortDischarge[];
 
 	public String[] sqlStatement() throws SQLException {
 	
+		
+		
 		Statement stmtLadunek = sqlConnection.getconnection().createStatement();
 		ResultSet rsLadunek = stmtLadunek.executeQuery("SELECT NAZWA_PORTU FROM PORT");
 		while (rsLadunek.next()) {
@@ -31,6 +33,7 @@ public class PortDischargeListPopulate {
 		arrayListPortDischarge = listPort.toArray(new String[listPort.size()]);
 		sqlConnection.getconnection().close();
 		}
+		
 		return arrayListPortDischarge;
 		
 	}
