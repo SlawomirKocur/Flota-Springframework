@@ -71,6 +71,7 @@ public class Analyze {
 		while (rs.next()) {
 			priceDouble = rs.getDouble(1);
 
+		
 		}
 
 		double cenaDouble = priceDouble;
@@ -92,7 +93,7 @@ public class Analyze {
 		PreparedStatement pst = sqlConnection.getconnection().prepareStatement(query);
 		ResultSet rs2 = pst.executeQuery();
 		window.table.setModel(DbUtils.resultSetToTableModel(rs2));
-
+		sqlConnection.getconnection().close();
 		/*
 		 * WORKING SQL STATMENT AS EXAMPLE select NAZWA_STATKU, LADOWNOSC_STATKU_DWT
 		 * *2000 as ZYSK_BRUTTO, DOBOWY_KOSZY_PALIWA_USD * 3 as KOSZT,

@@ -34,7 +34,7 @@ public class NewCargo {
 
 			stmt.setString(1, window.textNazwaLadunku.getText());
 			stmt.setDouble(2, Double.parseDouble(window.textCenaLadunku.getText()));
-			stmt.setDouble(3, Double.parseDouble(window.textCenaLadunku.getText()));
+			stmt.setDouble(3, Double.parseDouble(window.textObjetoscLadunku.getText()));
 			stmt.setString(4, window.grainStandard.getSelectedItem());
 			stmt.setString(5, window.textUwagi.getText());
 

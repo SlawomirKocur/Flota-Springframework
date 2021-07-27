@@ -25,7 +25,7 @@ public class TablePopulate {
 		ResultSet rs = stmtShip.executeQuery();
 
 		window.table.setModel(DbUtils.resultSetToTableModel(rs));
-
+		sqlConnection.getconnection().close();
 	}
 
 	public void getCargoList() throws SQLException {
@@ -36,7 +36,7 @@ public class TablePopulate {
 		ResultSet rs = stmtCargo.executeQuery();
 
 		window.table.setModel(DbUtils.resultSetToTableModel(rs));
-
+		sqlConnection.getconnection().close();
 	}
 
 	public void getPortList() throws SQLException {
@@ -47,7 +47,7 @@ public class TablePopulate {
 		ResultSet rs = stmtCargo.executeQuery();
 
 		window.table.setModel(DbUtils.resultSetToTableModel(rs));
-
+		sqlConnection.getconnection().close();
 	}
 
 }

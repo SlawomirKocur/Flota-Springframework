@@ -553,11 +553,13 @@ public class MainGUIWindow {
 		panelWynikiBazy.setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(690, 51, 787, 402);
+		scrollPane.setBounds(719, 51, 803, 402);
 
 		panelWynikiBazy.add(scrollPane);
 
 		table = new JTable();
+		table.setForeground(Color.BLACK);
+		table.setBackground(Color.GRAY);
 		scrollPane.setViewportView(table);
 
 		JButton btnShipsInTable = new JButton("Statki");
@@ -566,7 +568,7 @@ public class MainGUIWindow {
 
 				try {
 					shipInTable.getShipLost();
-					;
+					
 				} catch (SQLException e1) {
 
 					e1.printStackTrace();

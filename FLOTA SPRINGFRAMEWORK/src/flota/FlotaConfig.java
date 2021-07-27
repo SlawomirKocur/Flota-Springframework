@@ -15,10 +15,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @ComponentScan(basePackages = "flota")
 public class FlotaConfig {
 
-	@Bean
-	public AspectChoice aspectsel() {
-		return new AspectChoice();
-	}
 	
 	
 }

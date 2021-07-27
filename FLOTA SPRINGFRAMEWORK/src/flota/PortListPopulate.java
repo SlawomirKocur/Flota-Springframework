@@ -29,7 +29,7 @@ public class PortListPopulate {
 		// ktora nastepnie tworzy poszczegolne wiersze w JComboBox
 		listPort.add(sLadunek);
 		arrayListPort = listPort.toArray(new String[listPort.size()]);
-		
+		sqlConnection.getconnection().close();
 		}
 		return arrayListPort;
 		
