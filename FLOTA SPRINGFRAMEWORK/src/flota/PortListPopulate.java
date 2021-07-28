@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class PortListPopulate {
 
 	@Autowired
-	private MySQLConnection sqlConnection;
+	private DBDataSource sqlConnection;
 
 	static ArrayList<String> listPort = new ArrayList();
 	static String arrayListPort[];

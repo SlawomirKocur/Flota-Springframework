@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sql.DataSource;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 public class CargoPortListPopulate {
 
 	@Autowired
-	private  MySQLConnection sqlConnection;
+	private  DBDataSource sqlConnection;
 
 	private ArrayList<String> listCargo = new ArrayList();
 	private String arrayListCargo[];

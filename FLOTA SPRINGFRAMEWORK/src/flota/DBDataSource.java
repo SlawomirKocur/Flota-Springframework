@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import javax.sql.DataSource;
+
 import org.springframework.stereotype.Component;
 
 @Component
-public class MySQLConnection {
+public class DBDataSource {
 	/*
 	//connection to MySQL database
 	public Connection getconnection() throws SQLException {
@@ -46,5 +48,6 @@ public class MySQLConnection {
 	
 	
 	}
+
 
 }

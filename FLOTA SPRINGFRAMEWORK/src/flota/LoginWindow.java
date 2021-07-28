@@ -39,6 +39,9 @@ public class LoginWindow implements WindowGUI {
 	
 	
 	
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	@Override
 	public void windowBuild() {
 		frame = new JFrame();
@@ -53,7 +56,7 @@ public class LoginWindow implements WindowGUI {
 		userField = new JTextField();
 		userField.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		userField.setHorizontalAlignment(SwingConstants.TRAILING);
-		userField.setToolTipText("podaj login");
+		userField.setToolTipText("podaj login \"admin\"");
 		userField.setBounds(223, 94, 229, 28);
 		frame.getContentPane().add(userField);
 		userField.setColumns(10);
@@ -61,7 +64,7 @@ public class LoginWindow implements WindowGUI {
 		userPassword = new JPasswordField();
 		userPassword.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		userPassword.setHorizontalAlignment(SwingConstants.TRAILING);
-		userPassword.setToolTipText("podaj has\u0142o");
+		userPassword.setToolTipText("podaj has\u0142o \"admin\"");
 		userPassword.setBounds(223, 159, 227, 28);
 		frame.getContentPane().add(userPassword);
 
@@ -75,7 +78,7 @@ public class LoginWindow implements WindowGUI {
 		passwordLabel.setBounds(116, 159, 97, 28);
 		frame.getContentPane().add(passwordLabel);
 
-		infoLoginLabel = new JLabel("Podaj login i has\u0142o aby po\u0142\u0105czy\u0107 si\u0119 z baza danych\r\n");
+		infoLoginLabel = new JLabel("Podaj login i has\u0142o aby uruchomic aplikacje");
 		infoLoginLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		infoLoginLabel.setBounds(10, 11, 403, 28);
 		frame.getContentPane().add(infoLoginLabel);
@@ -99,6 +102,12 @@ public class LoginWindow implements WindowGUI {
 		});
 		loginButton.setBounds(341, 225, 111, 35);
 		frame.getContentPane().add(loginButton);
+		
+		JLabel lblNewLabel = new JLabel("username: admin      has\u0142o: admin");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setBounds(10, 222, 260, 38);
+		frame.getContentPane().add(lblNewLabel);
 		frame.setVisible(true);
 
 	}

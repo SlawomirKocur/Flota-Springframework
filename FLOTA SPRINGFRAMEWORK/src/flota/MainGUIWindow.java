@@ -34,6 +34,8 @@ import org.springframework.stereotype.Component;
 import com.toedter.calendar.JDateChooser;
 
 import net.proteanit.sql.DbUtils;
+import javax.swing.JTextPane;
+import javax.swing.JTextArea;
 
 @Component
 public class MainGUIWindow {
@@ -543,6 +545,17 @@ public class MainGUIWindow {
 
 		panelPodsumowanie.setBounds(311, 21, 155, 237);
 		panelZamownienie.add(panelPodsumowanie);
+		
+		JTextArea txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa = new JTextArea();
+		txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setFont(new Font("Arial", Font.PLAIN, 11));
+		txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setBackground(Color.GRAY);
+		txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setForeground(Color.RED);
+		txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setLineWrap(true);
+		txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setWrapStyleWord(true);
+		txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setText("WPROWADZ WSZYTKIE DANE\r\n>>>KLIKNIJ \"Podsumowanie\"\r\n>>>KLIKNIJ \"Analizuj zam\u00F3wienie\"");
+		txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setEditable(false);
+		txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.setBounds(141, 341, 195, 53);
+		panelZamownienie.add(txtrAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa);
 
 		JPanel panelWynikiBazy = new JPanel();
 		panelWynikiBazy.setBorder(new TitledBorder(null, "wyniki zapytania bazy danych", TitledBorder.LEADING,
